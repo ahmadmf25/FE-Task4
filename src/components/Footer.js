@@ -7,6 +7,6 @@ function Footer() {
         <p>Dibuat menggunakan ReactJS</p>
       </footer>
     );
-  }
+}
   
-  export default Footer;
+export default Footer;
