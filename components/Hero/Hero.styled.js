@@ -5,6 +5,9 @@ const StyledHero = styled.div`
     margin: 1rem;
     flex-basis: 40%;
   }
+  a {
+    text-decoration: none;
+  }
   section {
     display: flex;
     flex-direction: column;
@@ -12,18 +15,18 @@ const StyledHero = styled.div`
     align-items: center;
   }
   h2 {
-    color: #4361EE;
+    color: #4361ee;
     margin-bottom: 1rem;
     font-size: 2.44rem;
   }
   h3 {
-    color: #4361EE;
+    color: #4361ee;
     margin-bottom: 1rem;
     font-size: 1.59rem;
   }
   p {
-    color: #4361EE;
-    margin-bottom: 1rem;
+    color: #64748b;
+    margin-bottom: 2rem;
   }
   img {
     border: none;
