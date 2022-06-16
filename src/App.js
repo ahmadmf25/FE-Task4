@@ -26,7 +26,7 @@ function App() {
         <GlobalStyle />
         <Layout>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home/>} />
             <Route path="/movie/create" element={<CreateMovie />} />
             <Route path="/movie/popular" element={<PopularMovie />} />
             <Route path="/movie/now" element={<NowPlayingMovie />} />

@@ -1,26 +1,12 @@
+import { useSelector } from "react-redux";
 import Movie from "../Movie/Movie.js";
 import styles from "./Movies.module.css";
-import { nanoid } from "nanoid";
 
 function Movies(props) {
   // destructing props
-  const { title, movies, setMovies } = props ;
+  const { title } = props ;
 
-  // Membuat fungsi untuk handle click
-  function handleClick() {
-    const movie = {
-      id: nanoid(),
-      title: "Jigsaw",
-      year: 2022,
-      type: "Movie",
-      poster: "https://picsum.photos/300/400",
-    };
-
-    // Menjalankan fungsi setMovies
-    // Menambahkan movie ke dalam movies
-    // spread operator : copy data array
-    setMovies([...movies, movie]);
-  }
+  const movies = useSelector ((store) => store.movies.movies);
 
   return (
     <div className={styles.container}>
@@ -35,8 +21,6 @@ function Movies(props) {
             <Movie key={movie.id} movie={movie} />
           ))}
         </div>
-        {/* Membuat event onClick */}
-        <button onClick={handleClick}>Add Movie</button>
       </section>
     </div>
   );
