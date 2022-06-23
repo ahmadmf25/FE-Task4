@@ -9,6 +9,6 @@ function Header() {
         </ul>
       </nav>
     );
-  }
+}
   
-  export default Header;
+export default Header;
