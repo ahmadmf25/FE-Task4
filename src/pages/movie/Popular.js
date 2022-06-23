@@ -1,12 +1,14 @@
 import axios from "axios";
-import { useState,useEffect } from "react";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import Hero from "../../components/Hero/Hero";
 import Movies from "../../components/Movies/Movies";
+import { updateMovies } from "../../features/moviesSlice";
 import ENDPOINTS from "../../utils/endpoints";
 
 function PopularMovie() {
-  //Membuat state Movies
-  const [movies, setMovies]= useState([]);
+  //Membuat dispatch untuk mentrigger reducer
+  const dispatch = useDispatch();
 
   useEffect(() => {
     //Memanggil function getPopularMovies
@@ -15,17 +17,15 @@ function PopularMovie() {
   // Membuat Fungsi getPopularMovies
   async function getPopularMovies() {
     const response = await axios(ENDPOINTS.POPULAR);
-    // Simpan data ke state movies
-    setMovies(response.data.results);
+    dispatch(updateMovies(response.data.results));
   }
 
-  console.log(movies);
     return (
       <>
         <Hero />
-        <Movies title = "Popular Movies" movies= {movies}/>
+        <Movies title = "Popular Movies"/>
       </>
     );
-  }
+}
   
 export default PopularMovie;
